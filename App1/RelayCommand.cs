@@ -18,9 +18,7 @@ namespace ProjectWindows.View
         }
 
         private Action<object> execute;
-        private Func<object, bool> canExecute = (_) => true;
-
-
+        private Func<object, bool> canExecute;
 
         public RelayCommand(Action<object> action, Func<object, bool> test)
         {
@@ -29,14 +27,16 @@ namespace ProjectWindows.View
         }
 
 
+
         public bool CanExecute(object parameter)
         {
-            return canExecute(parameter);
+            return true;
         }
 
         public void Execute(object parameter)
         {
             execute(parameter);
+
         }
     }
 }

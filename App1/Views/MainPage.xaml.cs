@@ -1,4 +1,5 @@
 ﻿using App1.Models;
+using App1.Viewmodels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,9 @@ namespace ProjectWindows
     {
         public MainPage()
         {
+            this.DataContext = new MainViewModel();
             this.InitializeComponent();
+            
         }
         //protected override async void OnNavigatedTo(NavigationEventArgs e)
         //{

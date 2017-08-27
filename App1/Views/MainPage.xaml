@@ -6,15 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+   
     <StackPanel>
-        <TextBlock Text="Promo App" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36"/>
-        <Button Content="News Feed" Margin="5,100,5,10" HorizontalAlignment="Center" Width="160" Click="Navigate_Newsfeed"></Button>
-        <Button Content="Opleidingen" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Click="Navigate_Opleidingen"></Button>
-        <Button Content="Campus" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Click="Navigate_Campus"></Button>
-        <Button Content="Potentiële studenten" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Click="Navigate_PotentiëleStudenten"></Button>
-        <Button Content="Admin login" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Click="Navigate_AdminLogin"></Button>
-
+       
+        <ContentControl x:Name="Pages"  Content="{Binding SelectedViewModel}" Width="400"/>
+        
     </StackPanel>
 </Page>
 

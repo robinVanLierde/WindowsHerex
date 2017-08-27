@@ -11,20 +11,14 @@ namespace App1.Models
     {
         public Leerling()
         {
-            Id = "2";
-            Voornaam = "a";
-            Naam = "a";
-            Email = "a";
-            Telefoon = "a";
-            Voornaam = "a";
-            opleiding = "a";
-            campus = "a";
+            
 
         }
 
         public String Id { get; set; }
         public string Voornaam { get; set; }
         public string Naam { get; set; }
+        public string Adres { get; set; }
         public string Email { get; set; }
         public string Telefoon { get; set; }
         public string opleiding { get; set; }

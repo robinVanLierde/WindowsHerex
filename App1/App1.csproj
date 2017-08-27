@@ -95,6 +95,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Viewmodels\MainPageViewModel.cs" />
+    <Compile Include="Viewmodels\MainViewModel.cs" />
     <Compile Include="Viewmodels\PotentiëleStudentenViewModel.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -106,6 +108,9 @@
     </Compile>
     <Compile Include="Views\Campus.xaml.cs">
       <DependentUpon>Campus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NewsFeed.xaml.cs">
       <DependentUpon>NewsFeed.xaml</DependentUpon>
@@ -153,6 +158,10 @@
     <Page Include="Views\Campus.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NewsFeed.xaml">
       <Generator>MSBuild:Compile</Generator>

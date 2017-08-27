@@ -17,11 +17,10 @@ namespace ProjectWindows.View
         Leerling leerling;
         string test;
 
-        public PotentiëleStudenten()
+        public PotentiëleStudenten(MainViewModel mvm)
         {
-            this.DataContext = new PotentiëleStudentenViewModel();
-            leerling = new Leerling();
-            test = leerling.Voornaam;
+            this.DataContext = new PotentiëleStudentenViewModel(mvm);
+            this.InitializeComponent();
 
         }
         private void Navigate_Mainpage(object sender, RoutedEventArgs e)
