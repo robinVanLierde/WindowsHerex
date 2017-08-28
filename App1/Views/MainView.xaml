@@ -23,7 +23,7 @@
             <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Promo App" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36"/>
-        <Button Content="News Feed" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160"  Grid.Row="2"></Button>
+        <Button Content="Maken Newsfeed" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Command="{Binding navCrNewsfeed}"  Grid.Row="2"></Button>
         <Button Content="Opleidingen" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Command="{Binding navOpleidingen}" Grid.Row="3"></Button>
         <Button Content="Campussen" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Command="{Binding navCampussen}"  Grid.Row="4"></Button>
         <Button Content="Potentiële studenten" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Command="{Binding navPotStudent}" Grid.Row="5"></Button>
