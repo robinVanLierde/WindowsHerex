@@ -44,7 +44,7 @@ namespace RestServiceAugustus.Controllers
             }
             db.Leerling.Add(leerling);
             db.SaveChanges();
-            return CreatedAtRoute("DefaultApi", new { id = leerling.Id }, leerling);
+            return CreatedAtRoute("DefaultApi", new { id = leerling.LeerlingId }, leerling);
 
         }
 

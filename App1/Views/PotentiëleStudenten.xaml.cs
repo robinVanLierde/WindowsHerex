@@ -14,9 +14,6 @@ namespace ProjectWindows.View
     /// </summary>
     public sealed partial class PotentiëleStudenten : Page
     {
-        Leerling leerling;
-        string test;
-
         public PotentiëleStudenten(MainViewModel mvm)
         {
             this.DataContext = new PotentiëleStudentenViewModel(mvm);
