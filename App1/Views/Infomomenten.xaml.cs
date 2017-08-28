@@ -22,7 +22,8 @@ namespace App1.Views
     {
         public Infomomenten(MainViewModel mvm)
         {
-            this.DataContext = new InfoMomentenViewModel(mvm);
+                this.DataContext = new InfoMomentenViewModel(mvm);
+            
             this.InitializeComponent();
         }
     }

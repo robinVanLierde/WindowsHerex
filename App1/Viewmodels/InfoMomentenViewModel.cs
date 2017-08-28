@@ -18,8 +18,20 @@ namespace App1.Viewmodels
     class InfoMomentenViewModel : INotifyPropertyChanged
     {
         MainViewModel mvm;
-        private ObservableCollection<Newsfeed> infoMomenten { get; set; }
-        
+        private ObservableCollection<Newsfeed> _infoMomenten;
+        public ObservableCollection<Newsfeed> infoMomenten
+    {
+            get { return _infoMomenten; }
+            set
+            {
+                if (value == _infoMomenten)
+                    return;
+                _infoMomenten = value;
+                OnPropertyChanged("infoMomenten");
+
+            }
+        }
+
         public ICommand navHome { get; set; }
         private Newsfeed _selectedInfoMoment;
         public Newsfeed SelectedInfoMoment

@@ -21,6 +21,7 @@ namespace App1.Viewmodels
 
         public ICommand navCampussen { get; set; }
         public ICommand navAdmin { get; set; }
+        public ICommand navNewsFeed { get; set; }
         MainViewModel mvm;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -34,6 +35,7 @@ namespace App1.Viewmodels
             navCampussen = new RelayCommand(NavCampussen, CanExecuteMethod);
             navAdmin = new RelayCommand(NavAdmin, CanExecuteMethod);
             navInfo = new RelayCommand(NavInfo, CanExecuteMethod);
+            navNewsFeed = new RelayCommand(NavNewsFeed, CanExecuteMethod);
         }
 
         private void NavInfo(object obj)
@@ -41,6 +43,10 @@ namespace App1.Viewmodels
             mvm.SelectedViewModel = new Infomomenten(mvm);
         }
 
+        private void NavNewsFeed(object obj)
+        {
+            mvm.SelectedViewModel = new NewsFeed(mvm);
+        }
         public bool CanExecuteMethod(object obj)
         {
             return true;
