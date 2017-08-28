@@ -1,11 +1,13 @@
 ﻿using App1.Models;
 using App1.Views;
+using Newtonsoft.Json;
 using ProjectWindows.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -36,6 +38,7 @@ namespace App1.Viewmodels
             switch (SelectedOpleiding)
             {
                 case "Bedrijfsmanagement":
+                    
                     break;
                 case "Office management":
                     break;
@@ -45,6 +48,7 @@ namespace App1.Viewmodels
                    break;
                 case "Algemeen":
                     break;
+
             }
             //ier de filter op opleiding
         }
@@ -135,6 +139,7 @@ namespace App1.Viewmodels
         }
         public NewsFeedViewModel(MainViewModel mvm)
         {
+            Newsfeeds = new ObservableCollection<Newsfeed>();
             Opleidingen = new List<string>();
             Opleidingen.Add("Toegepaste Informatica");
             Opleidingen.Add("Bedrijfsmanagement");
@@ -147,9 +152,18 @@ namespace App1.Viewmodels
         }
         public async void getNewsFeeds()
         {
-           // HttpClient client = new HttpClient();
-          //  var jsonString = await client.GetStringAsync("http://localhost:6468/api/newsfeeds");
-           // infoMomenten = JsonConvert.DeserializeObject<ObservableCollection<Newsfeed>>(jsonString);
+            HttpClient client = new HttpClient();
+            var jsonString = await client.GetStringAsync("http://localhost:6468/api/newsfeeds");
+            ObservableCollection<Newsfeed> tijdelijk = new ObservableCollection<Newsfeed>();
+            
+            tijdelijk = JsonConvert.DeserializeObject<ObservableCollection<Newsfeed>>(jsonString);
+            foreach (var item in tijdelijk)
+            {
+                if (item.Type == "Newsfeed")
+                {
+                    Newsfeeds.Add(item);
+                }
+            }
         }
 
         public bool CanExecuteMethod(object obj)

@@ -105,18 +105,27 @@ namespace App1.Viewmodels
         public InfoMomentenViewModel(MainViewModel mvm)
     {
 
-            // hier moeten dan alle infomomenten ingestoken worden, dan zou et af moeten zijn
-            getNewsFeeds();
+            infoMomenten = new ObservableCollection<Newsfeed>();
+            getInfoMomenten();
             navHome = new RelayCommand(navHomepage, CanExecuteMethod);
             this.mvm = mvm;
     }
 
 
-        public async void getNewsFeeds()
+        public async void getInfoMomenten()
         {
             HttpClient client = new HttpClient();
             var jsonString = await client.GetStringAsync("http://localhost:6468/api/newsfeeds");
-            infoMomenten = JsonConvert.DeserializeObject<ObservableCollection<Newsfeed>>(jsonString);
+            ObservableCollection<Newsfeed> tijdelijk = new ObservableCollection<Newsfeed>();
+            tijdelijk = JsonConvert.DeserializeObject<ObservableCollection<Newsfeed>>(jsonString);
+            foreach (var item in tijdelijk)
+            {
+                if(item.Type == "Infomoment")
+                {
+                    infoMomenten.Add(item);
+                }
+            }
+
         }
         public bool CanExecuteMethod(object obj)
         {
