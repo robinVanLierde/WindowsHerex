@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace App1.Viewmodels
 {
@@ -123,7 +124,19 @@ namespace App1.Viewmodels
         public void DownloadPdf(object parameter)
         {
             //hier de code om alles op te vragen en te downloaden als pdf
-          
+            using (StreamWriter sw = File.CreateText("Leerlingen.csv"))
+            {
+                for (int i = 0; i < leerlingenList.Count; i++)
+                {
+                    sw.WriteLine(leerlingenList[i].Voornaam);
+                    sw.WriteLine(leerlingenList[i].Naam);
+                    sw.WriteLine(leerlingenList[i].Adres);
+                    sw.WriteLine(leerlingenList[i].Email);
+                    sw.WriteLine(leerlingenList[i].Telefoon);
+                    sw.WriteLine(leerlingenList[i].opleiding);
+                    sw.WriteLine(leerlingenList[i].campus);
+                }
+            }
 
         }
 

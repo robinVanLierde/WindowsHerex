@@ -31,4 +31,6 @@
         <Button Content="Infomomenten" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Command="{Binding navInfo}" Grid.Row="6"></Button>
         <Button Content="Admin login" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Command="{Binding navAdmin}"  Grid.Row="7"></Button>
     </Grid>
+    
+    
 </UserControl>

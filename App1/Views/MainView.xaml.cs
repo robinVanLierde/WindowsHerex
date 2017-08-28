@@ -25,5 +25,6 @@ namespace App1.Views
             this.DataContext = new MainPageViewModel(mvm);
             this.InitializeComponent();
         }
+       
     }
 }
