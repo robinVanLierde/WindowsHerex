@@ -28,7 +28,7 @@ namespace App1.Viewmodels
 
             if (loginNaam == "administrator" && paswoord == "123")
             {
-                mvm.SelectedViewModel = new MainView(mvm);
+                mvm.SelectedViewModel = new Adminstatistieken(mvm);
             }
         }
 
