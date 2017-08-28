@@ -29,7 +29,7 @@ namespace App1.Viewmodels
         public ICommand navHome { get; set; }
         public ICommand refresh { get; set; }
         public ICommand navCrNewsfeed { get; set; }
-        public ICommand downloadPdf { get; set; }
+        public ICommand bekijkGegevens { get; set; }
 
         private ObservableCollection<Leerling> leerlingenList = new ObservableCollection<Leerling>();
 
@@ -40,7 +40,7 @@ namespace App1.Viewmodels
             Refresh(null);
             navHome = new RelayCommand(navHomepage, CanExecuteMethod);
             refresh = new RelayCommand(Refresh, CanExecuteMethod);
-            downloadPdf = new RelayCommand(DownloadPdf, CanExecuteMethod);
+            bekijkGegevens = new RelayCommand(BekijkGegevens, CanExecuteMethod);
             navCrNewsfeed = new RelayCommand(navCreateNewsfeed, CanExecuteMethod);
             aantGeregistreerd = 0;
             aantBedrijfsman = 0; //aantal geregistreerde studenten die bedrijfsmanagement kozen;
@@ -81,9 +81,9 @@ namespace App1.Viewmodels
             aantToegepaste = 0; ; //aantal geregistreerde studenten die Toegepaste informatica kozen;
             aantRetail = 0; //aantal geregistreerde studenten die Retail management kozen;
 
-            HttpClient client = new HttpClient();
-            var jsonString = await client.GetStringAsync("http://localhost:6468/api/leerling");
-            leerlingenList = JsonConvert.DeserializeObject<ObservableCollection<Leerling>>(jsonString);
+            //HttpClient client = new HttpClient();
+            //var jsonString = await client.GetStringAsync("http://localhost:6468/api/leerling");
+            //leerlingenList = JsonConvert.DeserializeObject<ObservableCollection<Leerling>>(jsonString);
 
             
             aantGeregistreerd = leerlingenList.Count();
@@ -121,22 +121,10 @@ namespace App1.Viewmodels
             //als ge nog statistieken derbij wilt plaatsen maak nen public string aantRetail { get; set; } en vul em in kzal em dan wel toevoegen
 
         }
-        public void DownloadPdf(object parameter)
+        public void BekijkGegevens(object parameter)
         {
             //hier de code om alles op te vragen en te downloaden als pdf
-            using (StreamWriter sw = File.CreateText("Leerlingen.csv"))
-            {
-                for (int i = 0; i < leerlingenList.Count; i++)
-                {
-                    sw.WriteLine(leerlingenList[i].Voornaam);
-                    sw.WriteLine(leerlingenList[i].Naam);
-                    sw.WriteLine(leerlingenList[i].Adres);
-                    sw.WriteLine(leerlingenList[i].Email);
-                    sw.WriteLine(leerlingenList[i].Telefoon);
-                    sw.WriteLine(leerlingenList[i].opleiding);
-                    sw.WriteLine(leerlingenList[i].campus);
-                }
-            }
+            mvm.SelectedViewModel = new GegevensAlleStudenten(mvm);
 
         }
 

@@ -41,7 +41,7 @@
                 <TextBlock Text="Aantal Retail management" Width="150" Margin="0,10,0,10" TextWrapping="Wrap" Grid.Row="5" />
                 <TextBlock Text="{Binding aantRetail, Mode=TwoWay}" Width="175" Grid.Row="5" Grid.Column="1" Margin="0,10,0,10"/>
                 <Button Content="Refresh" Margin="0,5,0,5" Width="225" HorizontalAlignment="Center" Grid.ColumnSpan="2" Command="{Binding refresh}" Grid.Row="6" />
-                <Button Content="Pdf alle gegevens" Margin="0,5,0,5" Width="225" HorizontalAlignment="Center" Grid.ColumnSpan="2" Command="{Binding downloadPdf}" Grid.Row="7" />
+                <Button Content="Bekijk alle gegevens" Margin="0,5,0,5" Width="225" HorizontalAlignment="Center" Grid.ColumnSpan="2" Command="{Binding bekijkGegevens}" Grid.Row="7" />
                 <Button Content="Maak een nieuwe newsfeed" Margin="0,5,0,5" Width="225"  HorizontalAlignment="Center" Grid.ColumnSpan="2" Command="{Binding navCrNewsfeed}" Grid.Row="8" />
                 <Button Content="Log uit" Margin="0,5,0,5" Width="225" HorizontalAlignment="Center" Grid.ColumnSpan="2" Command="{Binding navHome}" Grid.Row="9" />
             </Grid>

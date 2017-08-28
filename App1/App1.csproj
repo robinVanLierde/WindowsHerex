@@ -100,6 +100,10 @@
     <Compile Include="Viewmodels\CampussenViewModel.cs" />
     <Compile Include="Models\Newsfeed.cs" />
     <Compile Include="Viewmodels\CreateNewsFeedViewModel.cs" />
+    <Compile Include="Views\GegevensAlleStudenten.xaml.cs">
+      <DependentUpon>GegevensAlleStudenten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viewmodels\GegevensStudentenViewModel.cs" />
     <Compile Include="Viewmodels\InfoMomentenViewModel.cs" />
     <Compile Include="Viewmodels\MainPageViewModel.cs" />
     <Compile Include="Viewmodels\MainViewModel.cs" />
@@ -161,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\GegevensAlleStudenten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Admin.xaml">
       <SubType>Designer</SubType>
     </Page>
