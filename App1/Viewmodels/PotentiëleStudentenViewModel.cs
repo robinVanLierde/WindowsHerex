@@ -1,10 +1,13 @@
 ﻿using App1.Models;
 using App1.Views;
+using Newtonsoft.Json;
 using ProjectWindows.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -26,6 +29,8 @@ namespace App1.Viewmodels
         public List<String> Opleidingen { get; set; }
         public List<String> Campussen { get; set; }
         MainViewModel mvm;
+
+        private ObservableCollection<Leerling> leerlingList;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -52,7 +57,7 @@ namespace App1.Viewmodels
             mvm.SelectedViewModel = new MainView(mvm);
 
         }
-        public void CreateLln(object obj)
+        public async void CreateLln(object obj)
         {
 
             Leerling nieuweLeerling = new Leerling();
@@ -65,7 +70,11 @@ namespace App1.Viewmodels
             nieuweLeerling.campus = vCampus;
             // hier moet je dan de nieuwe leerling registreren in de backend
 
-
+            HttpClient client = new HttpClient();
+            Uri theUri = new Uri("http://localhost:6468/api/leerling");
+            var jsonObject = JsonConvert.SerializeObject(nieuweLeerling);
+            StringContent content = new StringContent(jsonObject, System.Text.Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(theUri, content);
 
 
 

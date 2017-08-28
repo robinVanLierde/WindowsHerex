@@ -17,18 +17,7 @@ namespace RestServiceAugustus.Controllers
         // GET: api/Leerling
         public IQueryable<Leerling> Getleerlingen()
         {
-            //Leerling leerling1 = new Leerling()
-            //{ Naam = "robin",
-            //    opleiding = "test",
-            //    Voornaam = "robin",
-            //    campus = "test",
-            //    Email = "test",
-            //    Telefoon="test",
-            //    Id="test"
-
-            //};
-            //db.Leerling.Add(leerling1);
-            //db.SaveChanges();
+            
 
             return db.Leerling;
         }
