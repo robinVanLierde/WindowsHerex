@@ -1,10 +1,14 @@
 ﻿using App1.Models;
 using App1.Views;
+using Newtonsoft.Json;
 using ProjectWindows.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -15,15 +19,23 @@ namespace App1.Viewmodels
     {
         public ICommand navHome { get; set; }
         public ICommand AddLeerling { get; set; }
-        
+        [Required]
         public string Voornaam { get; set; }
+        [Required]
         public String Naam { get; set; }
+        [Required]
         public String Adres { get; set; }
+        [Required]
         public String Email { get; set; }
+        [Required]
         public String Telefoon { get; set; }
+        [Required]
         public String vOpleiding { get; set; }
+        [Required]
         public String vCampus { get; set; }
+        [Required]
         public List<String> Opleidingen { get; set; }
+        [Required]
         public List<String> Campussen { get; set; }
         MainViewModel mvm;
 
@@ -54,7 +66,7 @@ namespace App1.Viewmodels
             mvm.SelectedViewModel = new MainView(mvm);
 
         }
-        public void CreateLln(object obj)
+        public async void CreateLln(object obj)
         {
 
             Leerling nieuweLeerling = new Leerling();
@@ -65,10 +77,16 @@ namespace App1.Viewmodels
             nieuweLeerling.Telefoon = Telefoon;
             nieuweLeerling.opleiding = vOpleiding;
             nieuweLeerling.campus = vCampus;
-            // hier moet je dan de nieuwe leerling registreren in de backend
+            
 
+            HttpClient client = new HttpClient();
+            Uri theUri = new Uri("http://localhost:6468/api/leerling");
+            var jsonObject = JsonConvert.SerializeObject(nieuweLeerling);
+            StringContent content = new StringContent(jsonObject, System.Text.Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(theUri, content);
 
-
+            
+            
 
 
         }
