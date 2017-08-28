@@ -48,9 +48,9 @@ namespace App1.Viewmodels
             Campussen = new List<string>();
             Opleidingen.Add("Toegepaste Informatica");
 
-            Opleidingen.Add(" Bedrijfsmanagement");
-            Opleidingen.Add(" Office Management");
-            Opleidingen.Add(" Retail Management");
+            Opleidingen.Add("Bedrijfsmanagement");
+            Opleidingen.Add("Office Management");
+            Opleidingen.Add("Retail Management");
           
 
             Campussen.Add("Schoonmeersen");
