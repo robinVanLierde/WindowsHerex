@@ -47,7 +47,9 @@ namespace App1.Viewmodels
             Opleidingen = new List<string>();
             Campussen = new List<string>();
             Opleidingen.Add("Toegepaste Informatica");
-            Opleidingen.Add("Toegepaste andere dingk");
+            Opleidingen.Add(" Bedrijfsmanagement");
+            Opleidingen.Add(" Office Management");
+            Opleidingen.Add(" Retail Management");
             Campussen.Add("Schoonmeersen");
             Campussen.Add("Mercator");
             navHome = new RelayCommand(navHomepage, CanExecuteMethod);
@@ -83,7 +85,10 @@ namespace App1.Viewmodels
             StringContent content = new StringContent(jsonObject, System.Text.Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync(theUri, content);
 
-            
+            if (response.IsSuccessStatusCode)
+            {
+                mvm.SelectedViewModel = new MainView(mvm);
+            }
             
 
 

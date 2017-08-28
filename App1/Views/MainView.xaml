@@ -9,8 +9,9 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid HorizontalAlignment="Center">
+    <Grid HorizontalAlignment="Center" Margin="0,0,0,-135">
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -22,10 +23,11 @@
             <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Promo App" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36"/>
-        <Button Content="News Feed" Margin="0,100,0,10" HorizontalAlignment="Center" Width="160"  Grid.Row="1"></Button>
+        <Button Content="Maak News Feed" Margin="0,100,0,10" HorizontalAlignment="Center" Width="160" Command="{Binding navCrNewsfeed}"  Grid.Row="1" ></Button>
         <Button Content="Opleidingen" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160"  Grid.Row="2"></Button>
         <Button Content="Campus" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160"   Grid.Row="3"></Button>
         <Button Content="Potentiële studenten" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160" Command="{Binding navPotStudent}" Grid.Row="4"></Button>
         <Button Content="Admin login" Margin="5,10,5,10" HorizontalAlignment="Center" Width="160"  Grid.Row="5"></Button>
+       
     </Grid>
 </UserControl>

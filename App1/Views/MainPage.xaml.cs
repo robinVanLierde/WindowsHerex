@@ -34,18 +34,10 @@ namespace ProjectWindows
             this.InitializeComponent();
             
         }
-        //protected override async void OnNavigatedTo(NavigationEventArgs e)
-        //{
-        //    HttpClient client = new HttpClient();
-        //    var json = await client.GetStringAsync(new Uri("http://localhost:59239/api/leerlings"));
-        //    var lst = JsonConvert.DeserializeObject<ObservableCollection<Leerling>>(json);
-        //    ObservableCollection<Leerling> test = lst;
-
-        //}
-
+        
         private void Navigate_Newsfeed(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(NewsFeed), null);
+            this.Frame.Navigate(typeof(CreateNewsFeedViewModel), null);
         }
 
         private void Navigate_Opleidingen(object sender, RoutedEventArgs e)
