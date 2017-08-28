@@ -30,7 +30,7 @@ namespace App1.Viewmodels
         public ICommand navCrNewsfeed { get; set; }
         public ICommand downloadPdf { get; set; }
 
-        private ObservableCollection<Leerling> leerlingen;
+        private ObservableCollection<Leerling> leerlingenList = new ObservableCollection<Leerling>();
 
         public AdminStatistiekenViewModel(MainViewModel mvm)
         {
@@ -82,13 +82,13 @@ namespace App1.Viewmodels
 
             HttpClient client = new HttpClient();
             var jsonString = await client.GetStringAsync("http://localhost:6468/api/leerling");
-            leerlingen = JsonConvert.DeserializeObject<ObservableCollection<Leerling>>(jsonString);
+            leerlingenList = JsonConvert.DeserializeObject<ObservableCollection<Leerling>>(jsonString);
 
             
-            aantGeregistreerd = leerlingen.Count();
+            aantGeregistreerd = leerlingenList.Count();
             OnPropertyChanged("aantGeregistreerd");
 
-            foreach (var item in leerlingen)
+            foreach (var item in leerlingenList)
             {
                 if (item.opleiding == "Bedrijfsmanagement")
                 {

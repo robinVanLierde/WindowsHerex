@@ -1,21 +1,25 @@
 ﻿
 using App1.Models;
 using App1.Views;
+using Newtonsoft.Json;
 using ProjectWindows.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
 
 namespace App1.Viewmodels
 {
     class InfoMomentenViewModel : INotifyPropertyChanged
     {
         MainViewModel mvm;
-        public List<Newsfeed> infoMomenten { get; set; }
+        private ObservableCollection<Newsfeed> infoMomenten { get; set; }
+        
         public ICommand navHome { get; set; }
         private Newsfeed _selectedInfoMoment;
         public Newsfeed SelectedInfoMoment
@@ -88,11 +92,20 @@ namespace App1.Viewmodels
         }
         public InfoMomentenViewModel(MainViewModel mvm)
     {
-            
-            infoMomenten = new List<Newsfeed>();// hier moeten dan alle infomomenten ingestoken worden, dan zou et af moeten zijn
+
+            // hier moeten dan alle infomomenten ingestoken worden, dan zou et af moeten zijn
+            getNewsFeeds();
             navHome = new RelayCommand(navHomepage, CanExecuteMethod);
             this.mvm = mvm;
     }
+
+
+        public async void getNewsFeeds()
+        {
+            HttpClient client = new HttpClient();
+            var jsonString = await client.GetStringAsync("http://localhost:6468/api/newsfeeds");
+            infoMomenten = JsonConvert.DeserializeObject<ObservableCollection<Newsfeed>>(jsonString);
+        }
         public bool CanExecuteMethod(object obj)
         {
             return true;
