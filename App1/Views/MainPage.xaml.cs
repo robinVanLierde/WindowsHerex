@@ -42,7 +42,7 @@ namespace ProjectWindows
 
         private void Navigate_Opleidingen(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Opleidingen), null);
+            this.Frame.Navigate(typeof(OpleidingenViewModel), null);
         }
 
         private void Navigate_Campus(object sender, RoutedEventArgs e)

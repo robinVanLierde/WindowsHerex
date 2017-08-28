@@ -1,4 +1,8 @@
+
 ﻿using App1.Views;
+
+﻿using ProjectWindows;
+
 using ProjectWindows.View;
 using System;
 using System.Collections.Generic;
@@ -15,14 +19,20 @@ namespace App1.Viewmodels
 
         public ICommand navPotStudent { get; set; }
         public ICommand navCrNewsfeed { get; set; }
+
+        public ICommand navOpleidingen{ get; set; }
+
         MainViewModel mvm;
 
         public event PropertyChangedEventHandler PropertyChanged;
         public MainPageViewModel(MainViewModel Mvm)
         {
+
             this.mvm = Mvm;
-            navPotStudent = new RelayCommand(navPotentStudent, CanExecuteMethod);
             navCrNewsfeed = new RelayCommand(navCreateNewsfeed, CanExecuteMethod);
+            navPotStudent = new RelayCommand(NavPotentStudent, CanExecuteMethod);
+            navOpleidingen = new RelayCommand(NavOpleidingen, CanExecuteMethod);
+
         }
         
         public bool CanExecuteMethod(object obj)
@@ -30,16 +40,23 @@ namespace App1.Viewmodels
             return true;
         }
 
-        public void navPotentStudent(object obj)
+        public void NavPotentStudent(object obj)
         {
 
             mvm.SelectedViewModel = new PotentiëleStudenten(mvm);
 
         }
+
         public void navCreateNewsfeed(object obj)
         {
 
             mvm.SelectedViewModel = new CreateNewsfeed(mvm);
+        }
+        public void NavOpleidingen(object obj)
+        {
+
+            mvm.SelectedViewModel = new Opleidingen(mvm);
+
 
         }
         private void OnPropertyChanged(string propName)

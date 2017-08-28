@@ -7,10 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
    
-    <StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
        
-        <ContentControl x:Name="Pages"  Content="{Binding SelectedViewModel}" Width="400"/>
+        <ContentControl x:Name="Pages"  Content="{Binding SelectedViewModel}" HorizontalAlignment="Center"/>
         
-    </StackPanel>
+    </Grid>
 </Page>
 

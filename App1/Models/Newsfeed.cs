@@ -17,6 +17,6 @@ namespace App1.Models
         public string Opleiding { get; set; }
         public string Inhoud { get; set; }
         public string Title { get; set; }
-
+        public string Type { get; set; }
     }
 }

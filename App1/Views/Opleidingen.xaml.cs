@@ -1,4 +1,5 @@
 ﻿using App1;
+using App1.Viewmodels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,15 +22,12 @@ namespace ProjectWindows
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Opleidingen : Page
+    public sealed partial class Opleidingen : UserControl
     {
-        public Opleidingen()
+        public Opleidingen(MainViewModel mvm)
         {
+            this.DataContext = new OpleidingenViewModel(mvm);
             this.InitializeComponent();
-        }
-        private void Navigate_Mainpage(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage), null);
         }
     }
 }

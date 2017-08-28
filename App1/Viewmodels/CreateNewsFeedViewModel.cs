@@ -26,16 +26,23 @@ namespace App1.Viewmodels
         public String vOpleiding { get; set; }
         public List<String> Opleidingen { get; set; }
 
+        public List<String> Types { get; set; }
+        public string vType { get; set; }
+
         MainViewModel mvm;
 
         public CreateNewsFeedViewModel(MainViewModel mvm)
         {
             this.mvm = mvm;
+            Datum = DateTimeOffset.Now;
             Opleidingen = new List<string>();
+            Types = new List<string>();
             Opleidingen.Add("Toegepaste Informatica");
             Opleidingen.Add(" Bedrijfsmanagement");
             Opleidingen.Add(" Office Management");
             Opleidingen.Add(" Retail Management");
+            Types.Add("Newsfeed");
+            Types.Add("Infomoment");
             navHome = new RelayCommand(navHomepage, CanExecuteMethod);
             AddNewsfeed = new RelayCommand(CreateNewfeed, CanExecuteMethod);
 
@@ -58,7 +65,9 @@ namespace App1.Viewmodels
                 Date = Datum,
                 Inhoud = Inhoud,
                 Opleiding = vOpleiding,
-                Title = Titel
+                Title = Titel,
+                Type = vType
+
             };
 
             HttpClient client = new HttpClient();
