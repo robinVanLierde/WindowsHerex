@@ -35,7 +35,9 @@ namespace App1.Viewmodels
             Opleidingen = new List<string>();
             Campussen = new List<string>();
             Opleidingen.Add("Toegepaste Informatica");
-            Opleidingen.Add("Toegepaste andere dingk");
+            Opleidingen.Add("Bedrijfsmanagement");
+            Opleidingen.Add("Office management");
+            Opleidingen.Add("Retail management");
             Campussen.Add("Schoonmeersen");
             Campussen.Add("Mercator");
             navHome = new RelayCommand(navHomepage, CanExecuteMethod);

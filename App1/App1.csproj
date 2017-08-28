@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Viewmodels\MainPageViewModel.cs" />
     <Compile Include="Viewmodels\MainViewModel.cs" />
+    <Compile Include="Viewmodels\OpleidingenViewModel.cs" />
     <Compile Include="Viewmodels\PotentiëleStudentenViewModel.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
