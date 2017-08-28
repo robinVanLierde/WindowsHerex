@@ -29,7 +29,7 @@
         <TextBlock Text="Voornaam" Width="150" Grid.Row="1"  />
         <TextBox Text="{Binding Voornaam, Mode=TwoWay}" Width="175" Grid.Row="1" Grid.Column="1" Margin="0,10,0,10"/>        
         <TextBlock Text="naam" Width="150" Grid.Row="2" />
-        <TextBox Text="{Binding Naam, Mode=TwoWay}" Width="175" Grid.Row="2" Grid.Column="1" Margin="0,10,0,10"/>
+        <TextBox Text="{Binding Naam , Mode=TwoWay }" x:Name="bname" Width="175" Grid.Row="2" Grid.Column="1" Margin="0,10,0,10"/>
         <TextBlock Text="adres" Width="150" Grid.Row="3" />
         <TextBox Text="{Binding Adres, Mode=TwoWay}" Width="175" Grid.Row="3" Grid.Column="1" Margin="0,10,0,10"/>
         <TextBlock Text="email" Width="150" Grid.Row="4" />

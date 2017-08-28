@@ -167,12 +167,14 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeerlingController.cs" />
+    <Compile Include="Controllers\NewsfeedsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DbContext\RestServiceDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Leerling.cs" />
+    <Compile Include="Models\Newsfeed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

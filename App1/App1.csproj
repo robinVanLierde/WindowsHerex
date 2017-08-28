@@ -97,10 +97,15 @@
     </Compile>
     <Compile Include="Viewmodels\AdminViewModel.cs" />
     <Compile Include="Viewmodels\CampussenViewModel.cs" />
+    <Compile Include="Models\Newsfeed.cs" />
+    <Compile Include="Viewmodels\CreateNewsFeedViewModel.cs" />
     <Compile Include="Viewmodels\MainPageViewModel.cs" />
     <Compile Include="Viewmodels\MainViewModel.cs" />
     <Compile Include="Viewmodels\OpleidingenViewModel.cs" />
     <Compile Include="Viewmodels\PotentiëleStudentenViewModel.cs" />
+    <Compile Include="Views\CreateNewsfeed.xaml.cs">
+      <DependentUpon>CreateNewsfeed.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
@@ -152,6 +157,11 @@
     </ApplicationDefinition>
     <Page Include="Views\Admin.xaml">
       <SubType>Designer</SubType>
+    <Page Include="Views\CreateNewsfeed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Campussen.xaml">
