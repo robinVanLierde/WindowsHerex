@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Viewmodels\AdminStatistiekenViewModel.cs" />
     <Compile Include="Viewmodels\AdminViewModel.cs" />
     <Compile Include="Viewmodels\CampussenViewModel.cs" />
     <Compile Include="Models\Newsfeed.cs" />
@@ -103,6 +104,9 @@
     <Compile Include="Viewmodels\MainViewModel.cs" />
     <Compile Include="Viewmodels\OpleidingenViewModel.cs" />
     <Compile Include="Viewmodels\PotentiëleStudentenViewModel.cs" />
+    <Compile Include="Views\Adminstatistieken.xaml.cs">
+      <DependentUpon>Adminstatistieken.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateNewsfeed.xaml.cs">
       <DependentUpon>CreateNewsfeed.xaml</DependentUpon>
     </Compile>
@@ -130,9 +134,6 @@
       <DependentUpon>PotentiëleStudenten.xaml</DependentUpon>
     </Compile>
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="Views\Statistieken.xaml.cs">
-      <DependentUpon>Statistieken.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -158,6 +159,10 @@
     <Page Include="Views\Admin.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Adminstatistieken.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateNewsfeed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,10 +187,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\PotentiëleStudenten.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Statistieken.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
