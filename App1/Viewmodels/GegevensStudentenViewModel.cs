@@ -1,18 +1,20 @@
 ﻿using App1.Models;
 using App1.Views;
+using Newtonsoft.Json;
 using ProjectWindows.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace App1.Viewmodels
 {
-    class GegevensStudentenViewModel
+    class GegevensStudentenViewModel : INotifyPropertyChanged
     {
         MainViewModel mvm;
         private string _voornaam;
@@ -154,13 +156,18 @@ namespace App1.Viewmodels
         public GegevensStudentenViewModel(MainViewModel mvm)
         {
             this.mvm = mvm;
-            Leerlingen = new ObservableCollection<Leerling>();
-
-            // hier moet je uit uwen backend de leerlingen insteken
-
-
-
+            getLeerlingen();
+            
             navHome = new RelayCommand(navHomepage, CanExecuteMethod);
+        }
+
+        public async void getLeerlingen()
+        {
+            HttpClient client = new HttpClient();
+            var jsonString = await client.GetStringAsync("http://localhost:6468/api/leerling");
+            Leerlingen = JsonConvert.DeserializeObject<ObservableCollection<Leerling>>(jsonString);
+            
+
         }
         public bool CanExecuteMethod(object obj)
         {
@@ -170,7 +177,7 @@ namespace App1.Viewmodels
         public void navHomepage(object obj)
         {
 
-            mvm.SelectedViewModel = new MainView(mvm);
+            mvm.SelectedViewModel = new Adminstatistieken(mvm);
 
         }
         public event PropertyChangedEventHandler PropertyChanged;

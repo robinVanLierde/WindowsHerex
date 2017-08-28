@@ -81,9 +81,9 @@ namespace App1.Viewmodels
             aantToegepaste = 0; ; //aantal geregistreerde studenten die Toegepaste informatica kozen;
             aantRetail = 0; //aantal geregistreerde studenten die Retail management kozen;
 
-            //HttpClient client = new HttpClient();
-            //var jsonString = await client.GetStringAsync("http://localhost:6468/api/leerling");
-            //leerlingenList = JsonConvert.DeserializeObject<ObservableCollection<Leerling>>(jsonString);
+            HttpClient client = new HttpClient();
+            var jsonString = await client.GetStringAsync("http://localhost:6468/api/leerling");
+            leerlingenList = JsonConvert.DeserializeObject<ObservableCollection<Leerling>>(jsonString);
 
             
             aantGeregistreerd = leerlingenList.Count();

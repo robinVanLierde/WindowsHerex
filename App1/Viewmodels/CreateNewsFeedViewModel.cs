@@ -78,7 +78,7 @@ namespace App1.Viewmodels
 
             if (response.IsSuccessStatusCode)
             {
-                mvm.SelectedViewModel = new MainView(mvm);
+                mvm.SelectedViewModel = new Adminstatistieken(mvm);
             }
 
 
