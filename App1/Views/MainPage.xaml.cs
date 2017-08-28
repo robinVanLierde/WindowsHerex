@@ -43,29 +43,5 @@ namespace ProjectWindows
 
         //}
 
-        private void Navigate_Newsfeed(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(NewsFeed), null);
-        }
-
-        private void Navigate_Opleidingen(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Opleidingen), null);
-        }
-
-        private void Navigate_Campus(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Campus), null);
-        }
-
-        private void Navigate_PotentiëleStudenten(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(View.PotentiëleStudenten), null);
-        }
-
-        private void Navigate_AdminLogin(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AdminLogin), null);
-        }
     }
 }
