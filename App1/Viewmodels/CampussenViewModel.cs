@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.Devices.Geolocation;
+using Windows.Foundation;
+using Windows.Services.Maps;
+using Windows.UI.Xaml.Controls.Maps;
 
 namespace App1.Viewmodels
 {
@@ -113,5 +117,9 @@ namespace App1.Viewmodels
             }
 
         }
+
+       
+
+        
     }
 }
