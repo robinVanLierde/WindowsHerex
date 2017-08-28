@@ -16,7 +16,7 @@ namespace App1.Viewmodels
 
         public ICommand navPotStudent { get; set; }
         public ICommand navCrNewsfeed { get; set; }
-
+        public ICommand navInfo { get; set; }
         public ICommand navOpleidingen{ get; set; }
 
         public ICommand navCampussen { get; set; }
@@ -33,8 +33,14 @@ namespace App1.Viewmodels
             navOpleidingen = new RelayCommand(NavOpleidingen, CanExecuteMethod);
             navCampussen = new RelayCommand(NavCampussen, CanExecuteMethod);
             navAdmin = new RelayCommand(NavAdmin, CanExecuteMethod);
+            navInfo = new RelayCommand(NavInfo, CanExecuteMethod);
         }
-        
+
+        private void NavInfo(object obj)
+        {
+            mvm.SelectedViewModel = new Infomomenten(mvm);
+        }
+
         public bool CanExecuteMethod(object obj)
         {
             return true;

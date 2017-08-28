@@ -19,7 +19,7 @@
         <TextBlock Text="Opleidingen" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36"/>
         
         <TextBlock Text="{Binding Titel}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="2" FontSize="24"/>
-        <ScrollViewer Grid.Row="3">
+        <ScrollViewer Grid.Row="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" >
             <TextBlock Text="{Binding MainTekst}" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Top"  FontSize="12"/>
         </ScrollViewer>
         <Button Content="Back to mainpage"  Grid.Row="4" HorizontalAlignment="Center" Command="{Binding navHome}"></Button>
